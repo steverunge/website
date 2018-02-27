@@ -4,7 +4,6 @@
 <title>Home</title>
 <meta charset="UFT-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
 <style>
 body{
 	font-family: Arial, Helvetica, sans-serif;
@@ -29,9 +28,6 @@ body{
 	text-align: center;
 	padding: 14px 20px;
 	text-decoration: none;
-}
-.navbar a.right{
-	float: right;
 }
 .navbar a:hover{
 	background-color: #ddd;
@@ -65,34 +61,7 @@ body{
 .footer h2{
 	font-size: 12px;
 }
-.container{
-	display: inline-block;
-	cursor: pointer;
-}
-.bar1, .bar2, .bar3{
-	width: 35px;
-	height: 5px;
-	background-color: #333;
-	margin: 6px 0;
-	transition: 0.4s;
-}
-.change .bar1{
-	-webkit-transform: rotate(-45deg) translate(-9px, 6px);
-	transform: rotate(-45deg) translate(-9px, 6px);
-}
-.change .bar2{
-	opacity:0;
-}
-.change .bar3{
-	-webkit-transform: rotate(45deg) translate(-8px, -8px);
-	transform: rotate(45deg) translate(-8px, -8px);
-}
 </style>
-<script>
-function myFunction(x){
-	x.classList.toggle("change");
-}
-</script>
 </head>
 </html>
 
@@ -102,10 +71,10 @@ function myFunction(x){
 	<p>Website is currently in development.</p>
 </div>
 
-<div class="w3-bar w3-black">
-	<a href="#" class="w3-button w3-bar-item">Link</a>
-	<a href="http://www.linkedin.com/in/stevenrunge" class="w3-button w3-bar-item">LinkedIn</a>
-	<a href="#" class="w3-button w3-bar-item">Link</a>
+<div class="navbar">
+	<a href="http://www.http://www.stevenrunge.com/">Home</a>
+	<a href="http://www.linkedin.com/in/stevenrunge">LinkedIn</a>
+	<a href="http://www.google.com/">My key source of knowledge</a>
 </div>
 
 <div class="row">
@@ -117,10 +86,4 @@ function myFunction(x){
 
 <div class="footer">
 	<h2>Created by Steven Runge</h2>
-</div>
-
-<div class="container" onclick="myFunction(this)">
-	<div class="bar1"></div>
-	<div class="bar2"></div>
-	<div class="bar3"></div>
 </div>
