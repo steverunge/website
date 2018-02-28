@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Home</title>
+<title>Steve Runge</title>
+<body style="background-color:#B4B7BA;"></body>
 <meta charset="UFT-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 body{
-	font-family: Arial, Helvetica, sans-serif;
+	height: 100%;
+	margin: 0;
+	font-family: Arial;
 }
 .header{
-	padding: 60px;
+	padding: 30px;
 	text-align: center;
-	background: #3399ff;
-	color: black;
+	background: #006699;
+	color: #EADEDB;
 }
 .header h1{
 	font-size: 40px;
@@ -26,47 +29,67 @@ body{
 	cursor: pointer;
 	padding: 14px 16px;
 	font-size: 17px;
-	width: 25%;
+	width: 33.3333%;
 }
 .tablink:hover{
 	background-color: #ddd;
 	color: black;
 }
 .tabcontent{
-	color: white;
+	color: black;
 	display: none;
-	padding: 100px 20px;
-	height: 100%;
+	padding-top: 50px;
+	padding-left: 20px;
 }
-
-#Home {background-color: blue;}
-#LinkedIn {background-color: blue;}
-#Contact {background-color: blue;}
-
+a.button {
+  border-radius: 4px;
+  background-color: #DC4C46;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 14px;
+  padding: 10px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+a.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+a.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+a.button:hover span {
+  padding-right: 25px;
+}
+a.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+#About {background-color: #B4B7BA;}
+#LinkedIn {background-color: #B4B7BA;}
+#Contact {background-color: #B4B7BA;}
 .footer{
-	padding: 20px;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
 	text-align: center;
-	background: #ddd;
+	background-color: #ddd;
 }
 .footer h2{
 	font-size: 12px;
 }
 </style>
-<script>
-function openPage(pageName, elmnt, color){
-	var i, tabcontent, tablinks;
-	tabcontent = document.getElementsByClassName("tabcontent");
-	for(i=0; i<tabcontent.length; i++){
-		tabcontent[i].style.display = "none";
-	}
-	tablinks = document.getElementsByClassName("tablink");
-	for(i=0; i<tablinks.length; i++){
-		tablinks[i].style.backgroundColor = "";
-	}
-	document.getElementByID(pageName).style.display = "block";
-	elmnt.style.backgroundColor = color;
-}
-</script>
 </head>
 </html>
 
@@ -76,26 +99,45 @@ function openPage(pageName, elmnt, color){
 	<p>Website is currently in development.</p>
 </div>
 
-<div id="Home" class="tabcontent">
-	<h3>Home</3>
+<button class="tablink" onclick="openPage('About', this, '#DC4C46')" id="defaultOpen">About</button>
+<button class="tablink" onclick="openPage('LinkedIn', this, '#DC4C46')">LinkedIn</button>
+<button class="tablink" onclick="openPage('Contact', this, '#DC4C46')">Contact</button>
+
+<div id="About" class="tabcontent">
+	<h3>Who I am?</h3>
+	<p>I prefer to go by Steve.</p>
 	<p>I'm a Computer Science student at UW-Milwaukee with a natural curiosity for all things technical.</p>
-	<p>This website has been programmed in HTML, CSS and Javascript - all self taught via online tutorials.</p>
+	<p>This website has been designed using HTML, CSS and Javascript - all self taught.</p>
 </div>
 
 <div id="LinkedIn" class="tabcontent">
 	<h3>Connect on LinkedIn!</h3>
 	<p>Be sure to mention you saw my website!</p>
-	<a href="http://www.linkedin.com/in/stevenrunge" target="_blank">Click here</a>
+	<a href="http://www.linkedin.com/in/stevenrunge" class="button" target="_blank"><span>Click here</span></a>
 </div>
 
 <div id="Contact" class="tabcontent">
+	<h3>Want to get in touch?</h3>
 	<p>It's probably best to contact me on LinkedIn.</p>
 </div>
-
-<button class="tablink" onclick="openPage('Home', this, 'blue')">Home</button>
-<button class="tablink" onclick="openPage('LinkedIn', this, 'blue')">LinkedIn</button>
-<button class="tablink" onclick="openPage('Contact', this, 'blue')">Contact</button>
 
 <div class="footer">
 	<h2>Created by Steven Runge</h2>
 </div>
+
+<script>
+function openPage(pageName,elmnt,color) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablink");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].style.backgroundColor = "";
+    }
+    document.getElementById(pageName).style.display = "block";
+    elmnt.style.backgroundColor = color;
+}
+document.getElementById("defaultOpen").click();
+</script>
