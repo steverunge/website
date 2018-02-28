@@ -17,42 +17,32 @@ body{
 .header h1{
 	font-size: 40px;
 }
-.navbar{
-	overflow: hidden;
-	background-color: #333;
-}
-.navbar a{
-	float: left;
-	display: block;
+.tablink{
+	background-color: #555;
 	color: white;
-	text-align: center;
-	padding: 14px 20px;
-	text-decoration: none;
+	float: left;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	padding: 14px 16px;
+	font-size: 17px;
+	width: 25%;
 }
-.navbar a:hover{
+.tablink:hover{
 	background-color: #ddd;
 	color: black;
 }
-.row{
-	display: flex;
-	flex-wrap: wrap;
+.tabcontent{
+	color: white;
+	display: none;
+	padding: 100px 20px;
+	height: 100%;
 }
-.side{
-	flex: 100%;
-	background-color: #f1f1f1;
-	padding: 20px;
-}
-@media (max-width: 700px){
-	.row{
-		flex-direction: column;
-	}
-}
-@media (max-width: 400px){
-	.navbar a{
-		float: none;
-		width: 100%;
-	}
-}
+
+#Home {background-color: blue;}
+#LinkedIn {background-color: blue;}
+#Contact {background-color: blue;}
+
 .footer{
 	padding: 20px;
 	text-align: center;
@@ -62,6 +52,21 @@ body{
 	font-size: 12px;
 }
 </style>
+<script>
+function openPage(pageName, elmnt, color){
+	var i, tabcontent, tablinks;
+	tabcontent = document.getElementsByClassName("tabcontent");
+	for(i=0; i<tabcontent.length; i++){
+		tabcontent[i].style.display = "none";
+	}
+	tablinks = document.getElementsByClassName("tablink");
+	for(i=0; i<tablinks.length; i++){
+		tablinks[i].style.backgroundColor = "";
+	}
+	document.getElementByID(pageName).style.display = "block";
+	elmnt.style.backgroundColor = color;
+}
+</script>
 </head>
 </html>
 
@@ -71,17 +76,25 @@ body{
 	<p>Website is currently in development.</p>
 </div>
 
-<div class="navbar">
-	<a href="http://www.linkedin.com/in/stevenrunge" target="_blank">LinkedIn</a>
-	<a href="http://www.google.com/" target="_blank">My key source of knowledge</a>
+<div id="Home" class="tabcontent">
+	<h3>Home</3>
+	<p>I'm a Computer Science student at UW-Milwaukee with a natural curiosity for all things technical.</p>
+	<p>This website has been programmed in HTML, CSS and Javascript - all self taught via online tutorials.</p>
 </div>
 
-<div class="row">
-	<div class="side">
-		<h2>About Me</h2>
-		<p>Computer Science student at UW-Milwaukee.</p>
-	</div>
+<div id="LinkedIn" class="tabcontent">
+	<h3>Connect on LinkedIn!</h3>
+	<p>Be sure to mention you saw my website!</p>
+	<a href="http://www.linkedin.com/in/stevenrunge" target="_blank">Click here</a>
 </div>
+
+<div id="Contact" class="tabcontent">
+	<p>It's probably best to contact me on LinkedIn.</p>
+</div>
+
+<button class="tablink" onclick="openPage('Home', this, 'blue')">Home</button>
+<button class="tablink" onclick="openPage('LinkedIn', this, 'blue')">LinkedIn</button>
+<button class="tablink" onclick="openPage('Contact', this, 'blue')">Contact</button>
 
 <div class="footer">
 	<h2>Created by Steven Runge</h2>
