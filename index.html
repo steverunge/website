@@ -41,39 +41,22 @@ body{
 	padding-top: 50px;
 	padding-left: 20px;
 }
-a.button {
-  border-radius: 4px;
+a.button{
   background-color: #DC4C46;
   border: none;
   color: #FFFFFF;
   text-align: center;
   font-size: 14px;
+  text-decoration: none;
   padding: 10px;
-  width: 200px;
-  transition: all 0.5s;
+  width: 100px;
+  transition: all 0.4s;
   cursor: pointer;
   margin: 5px;
 }
-a.button span {
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  transition: 0.5s;
-}
-a.button span:after {
-  content: '\00bb';
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  right: -20px;
-  transition: 0.5s;
-}
-a.button:hover span {
-  padding-right: 25px;
-}
-a.button:hover span:after {
-  opacity: 1;
-  right: 0;
+a.button:hover{
+  background-color: white;
+  color: black;
 }
 #About {background-color: #B4B7BA;}
 #LinkedIn {background-color: #B4B7BA;}
@@ -113,7 +96,7 @@ a.button:hover span:after {
 <div id="LinkedIn" class="tabcontent">
 	<h3>Connect on LinkedIn!</h3>
 	<p>Be sure to mention you saw my website!</p>
-	<a href="http://www.linkedin.com/in/stevenrunge" class="button" target="_blank"><span>Click here</span></a>
+	<a href="http://www.linkedin.com/in/stevenrunge" class="button" target="_blank" style="position:absolute; left: 15px; top: 375px;">Click here</a>
 </div>
 
 <div id="Contact" class="tabcontent">
